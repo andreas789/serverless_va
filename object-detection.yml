@@ -1,0 +1,15 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  object-detection:
+    lang: python3-debian
+    handler: ./object-detection
+    image: object-detection:latest
+    read_timeout: "300"  # Set a high timeout value (e.g., 300 seconds)
+      
+
+
+
+

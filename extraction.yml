@@ -1,0 +1,15 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  extraction:
+    lang: python3-debian
+    handler: ./extraction
+    image: extraction:latest
+    environment:
+      write_debug: true 
+      PYTHONUNBUFFERED: 1
+    annotations:
+      read_timeout: 30s
+      write_timeout: 30s
